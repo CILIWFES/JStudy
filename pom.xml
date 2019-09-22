@@ -13,6 +13,7 @@
         <module>quick</module>
         <module>tools</module>
         <module>frame</module>
+        <module>result</module>
     </modules>
 
     <properties>
