@@ -7,8 +7,7 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import pers.ciliwfes.jstudy.jhm.generate.*;
 import pers.ciliwfes.jstudy.jhm.generate.Impl.*;
-import pers.ciliwfes.zstudy.jhm.generate.*;
-import pers.ciliwfes.zstudy.jhm.generate.Impl.*;
+
 
 
 /**
@@ -22,7 +21,7 @@ public class JMH extends OptionsBuilder{
      * 获取链式构造器,build时执行JMH测试
      * @param _class 测试方法,需要实现JmhGenerate 下5个接口其一
      * @return
-     * @see pers.ciliwfes.zstudy.jhm.generate
+     * @see pers.ciliwfes.jstudy.jhm.generate
      */
     public static<T> ChainedOptionsBuilder toBuilder(Class _class) {
         JMH jmh = new JMH();
