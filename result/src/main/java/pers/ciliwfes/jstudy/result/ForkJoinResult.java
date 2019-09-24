@@ -66,6 +66,8 @@ class ForkJoinDemo extends RecursiveTask<Long> {
 public class ForkJoinResult implements JMHCompared4 {
     private final int size=10000*10;
     private static List<Integer> collect;
+    private static ForkJoinPool forkJoinPool = new ForkJoinPool();
+
 
     public ForkJoinResult() {
         collect = Stream.iterate(0, x -> x + 1).limit(size).collect(Collectors.toList());
@@ -73,7 +75,6 @@ public class ForkJoinResult implements JMHCompared4 {
 
     @Override
     public void test_1() {
-        ForkJoinPool forkJoinPool = new ForkJoinPool();
         ForkJoinDemo runner = new ForkJoinDemo(collect);
         ForkJoinTask submit = forkJoinPool.submit(runner);
         try {
